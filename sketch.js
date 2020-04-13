@@ -16,7 +16,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1280, 960, WEBGL);
+  createCanvas(1366, 768, WEBGL);
 
   video = createCapture(VIDEO);
   video.hide();
