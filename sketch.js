@@ -67,7 +67,7 @@ function draw() {
   push();
   rotateY(frameCount / 1500);
   translate(0, 0, -1000);
-  pointLight(255,255,0,0,0,-1000);
+  //pointLight(255,255,0,0,0,-1000);
 
   texture(sunjpg);
   sphere(25);
