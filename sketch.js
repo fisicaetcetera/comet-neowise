@@ -55,12 +55,12 @@ function draw() {
 
   texture(earthjpg);
   rotateY(frameCount / 3280);
-  sphere(80);
+  sphere(160);
   
   rotateY(frameCount / 1450);
-  translate(0, 0, -200);
+  translate(110, 110, -900);
   texture(moonjpg);
-  sphere(12);
+  sphere(22);
   
   pop();
   
