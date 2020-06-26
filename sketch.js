@@ -38,7 +38,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(640, 480, WEBGL);
+  createCanvas(1366, 768, WEBGL);
 
   assinatura = createGraphics(380, 100);
   assinatura.background(255, 100);
@@ -57,7 +57,7 @@ function setup() {
 }
 
 function draw() {
-  background(0, 0, 0, 100);
+  background(0);
   translate(0, 0, -5 * mouseX);
   translate(0, -5 * mouseY + height / 2, 0);
   rotateY(mouseX / 100);
