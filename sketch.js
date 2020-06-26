@@ -26,7 +26,7 @@ function preload() {
   earthjpg = loadImage('earthcloud-1.jpg');
   moonjpg = loadImage('moonmap1k.jpg');
   marsjpg = loadImage('mars.jpg');
-  sunjpg = loadImage('8k_sun.jpg');
+  sunjpg = loadImage('sun.jpg');
   mercuryjpg = loadImage('mercury.jpg');
   venusjpg = loadImage('venus.jpg');
   starsjpg = loadImage('stars.jpg');
