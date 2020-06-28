@@ -23,10 +23,11 @@ let posx = -200,
   posz = 100;
 
 function preload() {
+  neowise = loadImage('cometNeowisetransp.jpg');
   earthjpg = loadImage('earthcloud-1.jpg');
   moonjpg = loadImage('moonmap1k.jpg');
   marsjpg = loadImage('mars.jpg');
-  sunjpg = loadImage('sun.jpg');
+  sunjpg = loadImage('8k_sun.jpg');
   mercuryjpg = loadImage('mercury.jpg');
   venusjpg = loadImage('venus.jpg');
   starsjpg = loadImage('stars.jpg');
@@ -38,7 +39,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1366, 768, WEBGL);
+  createCanvas(2000, 1313, WEBGL);
 
   assinatura = createGraphics(380, 100);
   assinatura.background(255, 100);
@@ -49,8 +50,8 @@ function setup() {
 
   //condição inicial para cometa
 
-  teta = -1.07 //dia 24/6/2020
-  deltateta = 0.1 * 60 / (3280 * 27);
+  teta = -0.507 //dia 24/6/2020
+  deltateta = 0.5 * 60 / (3280 * 27);
   rcomAnt = acom * (1 - excentsq) / (1 + excent * cos(teta));
   console.log("rcomAnt= ", rcomAnt);
   console.log("deltateta = ", deltateta);
@@ -58,13 +59,14 @@ function setup() {
 
 function draw() {
   background(0);
-  translate(0, 0, -5 * mouseX);
-  translate(0, -5 * mouseY + height / 2, 0);
-  rotateY(mouseX / 100);
+  //translate(0, 0, -5 * mouseX);
+  //translate(0, -5 * mouseY + height / 2, 0);
+  rotateY(mouseX / 50);
+  rotateX(-mouseY/50);
   push();
-  // translate(0, 0, -3000);
-  // texture(starsjpg);
-  // plane(9500);
+  translate(0, 0, -3000);
+  texture(starsjpg);
+  sphere(5500);
   pop();
 
   push();
@@ -97,8 +99,9 @@ function draw() {
   ycom = rcom * sin(teta);
   translate(0, -1000 * ycom, 1000 * zcom - 1000);
   // console.log(ycom,zcom);
-  rotateX(1.5708 + teta);
-  cone(10, 2490 * rcom/4); 
+  rotateX(-1.5708 + teta);
+  texture(neowise);
+  cone(10, 59 * .8/rcom); 
 
   rcomAnt = rcom;
   pop();
