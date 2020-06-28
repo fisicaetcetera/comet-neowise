@@ -50,7 +50,7 @@ function setup() {
 
   //condição inicial para cometa
 
-  teta = -0.507 //dia 24/6/2020
+  teta = -1.07; 
   deltateta = 0.5 * 60 / (3280 * 27);
   rcomAnt = acom * (1 - excentsq) / (1 + excent * cos(teta));
   console.log("rcomAnt= ", rcomAnt);
