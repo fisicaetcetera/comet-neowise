@@ -1,3 +1,4 @@
+// Colocando uma câmara
 // Para colocar o cometa Neowise. Translação e rotação 
 //de cada planeta/lua sincronizado com a rotação to sol de //27 dias.
 // Funcionando razoavelmente
@@ -11,7 +12,8 @@ let excentsq = 0.9984;
 let want, rant;
 let teta;
 
-//let cam;
+let cam;
+let angleCam = 0;
 
 let earthjpg;
 let moonjpg;
@@ -50,7 +52,7 @@ function setup() {
 
   //condição inicial para cometa
 
-  teta = -1.07; 
+  teta = -0.507 //dia 24/6/2020
   deltateta = 0.5 * 60 / (3280 * 27);
   rcomAnt = acom * (1 - excentsq) / (1 + excent * cos(teta));
   console.log("rcomAnt= ", rcomAnt);
@@ -59,10 +61,14 @@ function setup() {
 
 function draw() {
   background(0);
+
+  angleCam = frameCount/250; 
+  camera(300*sin(angleCam),300*cos(angleCam),500*(1 + sin(angleCam)),0,0,0,0,1,0);
+
   //translate(0, 0, -5 * mouseX);
   //translate(0, -5 * mouseY + height / 2, 0);
-  rotateY(mouseX / 50);
-  rotateX(-mouseY/50);
+  //rotateY(mouseX / 50);
+  //rotateX(-mouseY/50);
   push();
   translate(0, 0, -3000);
   texture(starsjpg);
