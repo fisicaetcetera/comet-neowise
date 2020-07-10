@@ -63,7 +63,7 @@ function draw() {
   background(0);
 
   angleCam = frameCount/250; 
-  camera(300*sin(angleCam),300*cos(angleCam),500*(1 + sin(angleCam)),0,0,-1000,0,1,0);
+  camera(300*sin(angleCam),300*cos(angleCam),500*(sin(angleCam)),0,0,-1000,0,1,0);
 
   //translate(0, 0, -5 * mouseX);
   //translate(0, -5 * mouseY + height / 2, 0);
