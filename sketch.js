@@ -41,7 +41,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(2000, 1313, WEBGL);
+  createCanvas(1366, 768, WEBGL);
 
   assinatura = createGraphics(380, 100);
   assinatura.background(255, 100);
@@ -103,6 +103,7 @@ function draw() {
 
   zcom = rcom * cos(teta);
   ycom = rcom * sin(teta);
+  xcom = rcom * cos(2.461);
   translate(0, -1000 * ycom, 1000 * zcom - 1000);
   // console.log(ycom,zcom);
   rotateX(-1.5708 + teta);
