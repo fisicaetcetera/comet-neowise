@@ -3,7 +3,7 @@
 //de cada planeta/lua sincronizado com a rotação to sol de //27 dias.
 // Funcionando razoavelmente
 
-let rcom, xcom, ycom;
+let rcom, xcom, ycom, zcom;
 let excent = 0.9992;
 let comtilt = 2.26893; //130 graus
 let acom = 370;
@@ -37,11 +37,11 @@ function preload() {
   marsRadius = 2.26;
   venusRadius = 4.04;
   sunRadius = 465;
-  mercuryRadius = 1, 63083872e-5;
+  mercuryRadius = 1.63083872e-5;
 }
 
 function setup() {
-  createCanvas(1366, 768, WEBGL);
+  createCanvas(500, 500, WEBGL);
 
   assinatura = createGraphics(380, 100);
   assinatura.background(255, 100);
@@ -62,8 +62,8 @@ function setup() {
 function draw() {
   background(0);
 
-  angleCam = frameCount/250; 
-  camera(300*sin(angleCam),300*cos(angleCam),500*(sin(angleCam)),0,0,-1000,0,1,0);
+  angleCam = frameCount / 500;
+  camera(1500 * sin(angleCam), 1500 * cos(angleCam),1500 * cos(angleCam), 0, 0, -1000, 0, 1, 0);
 
   //translate(0, 0, -5 * mouseX);
   //translate(0, -5 * mouseY + height / 2, 0);
@@ -72,7 +72,7 @@ function draw() {
   push();
   translate(0, 0, -3000);
   texture(starsjpg);
-  sphere(5500);
+  sphere(5000);
   pop();
 
   push();
@@ -100,15 +100,20 @@ function draw() {
   deltateta = deltateta * pow((rcomAnt / rcom), 2);
   teta += deltateta;
   //console.log(teta, deltateta);
-
+  xcom = 0;
   zcom = rcom * cos(teta);
   ycom = rcom * sin(teta);
-  xcom = rcom * cos(2.461);
-  translate(0, -1000 * ycom, 1000 * zcom - 500);
+  //  if(teta < ) {
+  //  xcom = -rcom * cos(2.47);
+  //  }else{
+  //  xcom = rcom * cos(2.47);  
+  //  }
+
+  translate(-1000 * xcom, -1000 * ycom, 1000 * zcom - 500);
   // console.log(ycom,zcom);
   rotateX(-1.5708 + teta);
   texture(neowise);
-  cone(10, 59 * .8/rcom); 
+  cone(10, 59 * 0.8 / rcom);
 
   rcomAnt = rcom;
   pop();
@@ -144,7 +149,7 @@ function draw() {
 
   push();
   rotateY(frameCount / 83457);
-  translate(0, 0, -2524);
+  translate(-1260, 0, -2200);
   rotateY(frameCount / 68123);
   texture(marsjpg);
   sphere();
