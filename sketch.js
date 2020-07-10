@@ -87,7 +87,7 @@ function draw() {
 
   push();
 
-  translate(0, 0, -1000);
+  translate(0, 0, -500);
   texture(sunjpg);
   rotateY(frameCount / 3280);
   sphere(80);
@@ -104,7 +104,7 @@ function draw() {
   zcom = rcom * cos(teta);
   ycom = rcom * sin(teta);
   xcom = rcom * cos(2.461);
-  translate(0, -1000 * ycom, 1000 * zcom - 1000);
+  translate(0, -1000 * ycom, 1000 * zcom - 500);
   // console.log(ycom,zcom);
   rotateX(-1.5708 + teta);
   texture(neowise);
